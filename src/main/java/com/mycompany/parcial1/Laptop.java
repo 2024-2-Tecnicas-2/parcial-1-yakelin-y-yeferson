@@ -19,8 +19,8 @@ public class Laptop extends Producto{
         super(nombre, descripcion, precio, cantidad);
     }
 
-    Laptop() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Laptop() {
+        
     }
     
    
@@ -80,7 +80,7 @@ public class Laptop extends Producto{
 
     @Override
     public String toString() {
-        return "Laptop{" + "marca=" + marca + ", procesador=" + procesador + '}';
+        return "Laptop{" + "marca=" + marca + ", procesador=" + procesador + ", nombre= " + super.nombre + ", descripcion= " + super.descripcion + ", precio= " + super.precio + ", cantidad= " + super.cantidad + '}';
     }
     
     
