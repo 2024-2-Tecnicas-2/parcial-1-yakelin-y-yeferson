@@ -67,23 +67,20 @@ public class Principal {
                             break;
                         }
                         case 3: {
-                            Tablet newTablet = new Tablet();
-                            System.out.print("Ingrese la marca de la Tablet: ");
-                            String marca = sc.nextLine();
-                            newTablet.setMarca(marca);
-                            System.out.print("Ingrese el tamaño de la pantalla: ");
-                            double tamanoPantalla = Double.parseDouble(sc.nextLine());
-                            newTablet.setTamanoPantalla(tamanoPantalla);
-                            System.out.print("Ingrese el nombre: ");
+                            Accesorio newAccesorio = new Accesorio();
+                            System.out.print("Ingrese el accesorio: ");
                             String nombre = sc.nextLine();
-                            newTablet.setNombre(nombre);
+                            newAccesorio.setNombre(nombre);
+                            System.out.print("Ingrese la descripcion del accesorio: ");
+                            String descripcion = sc.nextLine();
+                            newAccesorio.setDescripcion(descripcion);
                             System.out.print("Ingrese el precio: ");
                             double precio = Double.parseDouble(sc.nextLine());
-                            newTablet.setPrecio(precio);
+                            newAccesorio.setPrecio(precio);
                             System.out.print("Ingrese el Stock donde se ubicará: ");
                             int stock = Integer.parseInt(sc.nextLine());
-                            newTablet.setStock(stock);
-                            agregarDispositivo(newTablet);
+                            newAccesorio.setCantidad(stock);
+                            agregarDispositivo(newAccesorio);
                             break;
                         }
                         default:
