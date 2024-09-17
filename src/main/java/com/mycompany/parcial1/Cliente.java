@@ -27,6 +27,13 @@ public class Cliente extends Pedido {
         this.identificacion = identificacion;
     }
 
+ 
+    
+
+    
+    
+
+    
     public String getNombreC() {
         return nombreC;
     }

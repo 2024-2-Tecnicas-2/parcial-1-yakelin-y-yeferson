@@ -93,6 +93,8 @@ public class Principal {
                     break;
                 case 2:
                     mostrarInventario();
+                    
+                    Cliente clientes = new Cliente();
                     System.out.print("El dispositivo que van a comprar (índice): ");
                     int index = Integer.parseInt(sc.nextLine());
                     System.out.print("Ingrese la cantidad: ");

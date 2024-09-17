@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ProductoTest {
-    
+    /**
      private Principal principal;
 
     @BeforeEach
@@ -29,7 +29,7 @@ public class ProductoTest {
     public void miPruebaTresInteres(){
        
     }
-    
+    **/
     
 
 }
