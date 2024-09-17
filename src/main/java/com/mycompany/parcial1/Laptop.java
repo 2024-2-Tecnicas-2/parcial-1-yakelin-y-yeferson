@@ -9,6 +9,10 @@ package com.mycompany.parcial1;
  * @author USUARIO
  */
 public class Laptop extends Producto{
+    
+    String marca;
+    String procesador;
+    
 
     public Laptop(String nombre, String descripcion, double precio, int cantidad) {
         super(nombre, descripcion, precio, cantidad);
@@ -19,8 +23,27 @@ public class Laptop extends Producto{
     }
     
    
-    
-    
+    public Laptop(String marca, String procesador, String nombre, String descripcion, double precio, int cantidad) {
+        super(nombre, descripcion, precio, cantidad);
+        this.marca = marca;
+        this.procesador = procesador;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getProcesador() {
+        return procesador;
+    }
+
+    public void setProcesador(String procesador) {
+        this.procesador = procesador;
+    }
 
     public String getNombre() {
         return nombre;
@@ -53,6 +76,17 @@ public class Laptop extends Producto{
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+    @Override
+    public String toString() {
+        return "Laptop{" + "marca=" + marca + ", procesador=" + procesador + '}';
+    }
+    
+    
+    
+    
+
+   
     
     
 
