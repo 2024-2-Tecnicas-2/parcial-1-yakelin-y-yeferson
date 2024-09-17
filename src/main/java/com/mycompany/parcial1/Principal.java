@@ -36,29 +36,33 @@ public class Principal {
                             System.out.print("Ingrese el precio: ");
                             double precio = Double.parseDouble(sc.nextLine());
                             newLaptop.setPrecio(precio);
-                            System.out.print("Ingrese el nombre de la marca: ");
-                            String marca = sc.nextLine();
+                            System.out.println("Ingrese la descripcion del producto: ");
+                            String descripcion = sc.nextLine();
+                            newLaptop.setDescripcion(descripcion);
+                            System.out.print("Ingrese la marca: ");
+                            String marca = sc.nextLine();                          
                             newLaptop.setMarca(marca);
+                            
                             agregarDispositivo(newLaptop);
                             break;
                         }
                         case 2: {
-                            Smartphone newSmart = new Smartphone();
+                            Telefono telefonos = new Telefono();
                             System.out.print("Ingrese la marca del Smartphone: ");
                             String marca = sc.nextLine();
-                            newSmart.setMarca(marca);
+                            telefonos.setMarca(marca);
                             System.out.print("Ingrese el sistema operativo: ");
                             String sistemaOperativo = sc.nextLine();
-                            newSmart.setSistemaOperativo(sistemaOperativo);
+                            telefonos.setSistemaOperativo(sistemaOperativo);
                             System.out.print("Ingrese el nombre: ");
                             String nombre = sc.nextLine();
-                            newSmart.setNombre(nombre);
+                            telefonos.setNombre(nombre);
                             System.out.print("Ingrese el precio: ");
                             double precio = Double.parseDouble(sc.nextLine());
-                            newSmart.setPrecio(precio);
+                            telefonos.setPrecio(precio);
                             System.out.print("Ingrese el Stock donde se ubicará: ");
                             int stock = Integer.parseInt(sc.nextLine());
-                            newSmart.setStock(stock);
+                            telefonos.setStock(stock);
                             agregarDispositivo(newSmart);
                             break;
                         }

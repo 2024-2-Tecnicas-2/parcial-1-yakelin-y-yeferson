@@ -10,6 +10,10 @@ public class Telefono extends Producto{
         this.memoriaAlmacenamiento = memoriaAlmacenamiento;
     }
 
+    Telefono() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public int getMemoriaAlmacenamiento() {
         return memoriaAlmacenamiento;
     }
