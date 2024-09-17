@@ -26,9 +26,9 @@ public class Principal {
                     switch (opc) {
                         case 1: {
                             Laptop newLaptop = new Laptop();
-                            System.out.print("Ingrese la marca de la laptop: ");
+                            System.out.print("Ingrese el nombre: ");
                             String marca = sc.nextLine();
-                            newLaptop.setMarca(marca);
+                            newLaptop.setNombre(marca);
                             System.out.print("Ingrese el nombre del procesador: ");
                             String procesador = sc.nextLine();
                             newLaptop.setProcesador(procesador);
