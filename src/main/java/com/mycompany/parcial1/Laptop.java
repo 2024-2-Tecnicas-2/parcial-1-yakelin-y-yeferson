@@ -12,27 +12,23 @@ public class Laptop extends Producto{
     
     String marca;
     String procesador;
-
-    public Laptop(String marca, String procesador, String nombre, String descripcion, double precio, int cantidad) {
-        super(nombre, descripcion, precio, cantidad);
-        this.marca = marca;
-        this.procesador = procesador;
-    }
-
-    public Laptop(String marca, String procesador) {
-        this.marca = marca;
-        this.procesador = procesador;
-    }
-
-
     
+    
+
+    public Laptop(String nombre, String descripcion, double precio, int cantidad) {
+        super(nombre, descripcion, precio, cantidad);
+    }
 
     Laptop() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
    
-    
+    public Laptop(String marca, String procesador, String nombre, String descripcion, double precio, int cantidad) {
+        super(nombre, descripcion, precio, cantidad);
+        this.marca = marca;
+        this.procesador = procesador;
+    }
 
     public String getMarca() {
         return marca;

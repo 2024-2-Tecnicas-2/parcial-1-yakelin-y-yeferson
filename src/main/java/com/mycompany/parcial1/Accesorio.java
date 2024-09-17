@@ -14,6 +14,11 @@ public class Accesorio extends Producto{
         super(nombre, descripcion, precio, cantidad);
     }
 
+    public Accesorio() {
+    }
+    
+    
+
     public String getNombre() {
         return nombre;
     }
