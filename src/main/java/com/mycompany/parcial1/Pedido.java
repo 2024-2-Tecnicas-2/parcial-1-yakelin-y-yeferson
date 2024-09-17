@@ -8,6 +8,14 @@ package com.mycompany.parcial1;
  *
  * @author USUARIO
  */
-public class Pedido {
+public class Pedido extends Producto{
+    
+    public Pedido(String nombre, String descripcion, double precio, int cantidad) {
+        super(nombre, descripcion, precio, cantidad);
+    }
+    
+    
+    
+    
     
 }
