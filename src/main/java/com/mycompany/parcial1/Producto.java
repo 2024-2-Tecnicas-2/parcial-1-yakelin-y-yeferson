@@ -13,6 +13,10 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
+    public Producto() {
+    }
+    
+
     @Override
     public String toString() {
         return "Producto{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio + ", cantidad=" + cantidad + '}';
