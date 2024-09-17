@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Principal {
    
-    static ArrayList<Producto> inveproductos = new ArrayList<>();
+    static ArrayList<Producto> productos = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -27,20 +27,18 @@ public class Principal {
                         case 1: {
                             Laptop newLaptop = new Laptop();
                             System.out.print("Ingrese el nombre: ");
-                            String marca = sc.nextLine();
-                            newLaptop.setNombre(marca);
+                            String nombre = sc.nextLine();
+                            newLaptop.setNombre(nombre);
                             System.out.print("Ingrese el nombre del procesador: ");
                             String procesador = sc.nextLine();
                             newLaptop.setProcesador(procesador);
-                            System.out.print("Ingrese el nombre: ");
-                            String nombre = sc.nextLine();
                             newLaptop.setNombre(nombre);
                             System.out.print("Ingrese el precio: ");
                             double precio = Double.parseDouble(sc.nextLine());
                             newLaptop.setPrecio(precio);
-                            System.out.print("Ingrese el Stock donde se ubicará: ");
-                            int stock = Integer.parseInt(sc.nextLine());
-                            newLaptop.setStock(stock);
+                            System.out.print("Ingrese el nombre de la marca: ");
+                            String marca = sc.nextLine();
+                            newLaptop.setMarca(marca);
                             agregarDispositivo(newLaptop);
                             break;
                         }
@@ -127,8 +125,8 @@ public class Principal {
         }
     }
 
-    public static void agregarDispositivo(DispositivoElectronico dispositivo) {
-        inventario.add(dispositivo);
+    public static void agregarDispositivo(Producto producto) {
+        productos.add(producto);
     }
 
     public static void venderDispositivo(int index, int cantidad) {
@@ -169,20 +167,7 @@ public class Principal {
         }
     }
 
-    public static void aplicarDescuentoMarca(String marca, double porcentaje) {
-        boolean descuentoAplicado = false;
-        for (DispositivoElectronico dispositivo : inventario) {
-            if (dispositivo.getMarca().equalsIgnoreCase(marca)) {
-                double precioOriginal = dispositivo.getPrecio();
-                dispositivo.setPrecio(precioOriginal - (precioOriginal * porcentaje / 100));
-                System.out.println("Se aplicó un descuento del " + porcentaje + "% a " + dispositivo.getNombre());
-                descuentoAplicado = true;
-            }
-        }
-        if (!descuentoAplicado) {
-            System.out.println("No se encontraron dispositivos de la marca " + marca);
-        }
-    }
+    
 
     public static DispositivoElectronico buscarDispositivoMasCaro() {
         if (inventario.isEmpty()) {
