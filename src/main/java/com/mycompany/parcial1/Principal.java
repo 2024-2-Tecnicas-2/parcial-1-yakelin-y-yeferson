@@ -40,30 +40,33 @@ public class Principal {
                             String descripcion = sc.nextLine();
                             newLaptop.setDescripcion(descripcion);
                             System.out.print("Ingrese la marca: ");
-                            String marca = sc.nextLine();                          
+                            String marca = sc.nextLine(); 
                             newLaptop.setMarca(marca);
+                            System.out.println("Ingrese la cantidad: ");
+                            int cantidad = Integer.parseInt(sc.nextLine());
+                            newLaptop.setCantidad(cantidad);
                             
                             agregarDispositivo(newLaptop);
                             break;
                         }
                         case 2: {
                             Telefono telefonos = new Telefono();
-                            System.out.print("Ingrese la marca del Smartphone: ");
-                            String marca = sc.nextLine();
-                            telefonos.setMarca(marca);
-                            System.out.print("Ingrese el sistema operativo: ");
-                            String sistemaOperativo = sc.nextLine();
-                            telefonos.setSistemaOperativo(sistemaOperativo);
                             System.out.print("Ingrese el nombre: ");
-                            String nombre = sc.nextLine();
-                            telefonos.setNombre(nombre);
+                            String marca = sc.nextLine();
+                            telefonos.setNombre(marca);
+                            System.out.print("Ingrese el almacenamineto: ");
+                            int almacenamimento = Integer.parseInt(sc.nextLine());
+                            telefonos.setMemoriaAlmacenamiento(almacenamimento);
                             System.out.print("Ingrese el precio: ");
                             double precio = Double.parseDouble(sc.nextLine());
                             telefonos.setPrecio(precio);
-                            System.out.print("Ingrese el Stock donde se ubicará: ");
-                            int stock = Integer.parseInt(sc.nextLine());
-                            telefonos.setStock(stock);
-                            agregarDispositivo(newSmart);
+                            System.out.println("Ingrese la descripcion del producto: ");
+                            String descripcion = sc.nextLine();
+                            telefonos.setDescripcion(descripcion);
+                            System.out.println("Ingrese la cantidad: ");
+                            int cantidad = Integer.parseInt(sc.nextLine());
+                            telefonos.setCantidad(cantidad);
+                            agregarDispositivo(telefonos);
                             break;
                         }
                         case 3: {
@@ -99,26 +102,10 @@ public class Principal {
                 case 3:
                     mostrarInventario();
                     break;
+            
                 case 4:
-                    System.out.print("Ingrese la marca a la que desea aplicar el descuento: ");
-                    String marca = sc.nextLine();
-                    System.out.print("Ingrese el porcentaje de descuento: ");
-                    double porcentaje = Double.parseDouble(sc.nextLine());
-                    aplicarDescuentoMarca(marca, porcentaje);
-                    System.out.println("Inventario actualizado con los descuentos aplicados:");
-                    mostrarInventario();
-                    break;
-                case 5:
                     System.out.println("Total de dinero de todos los dispositivos: " + calcularValorTotalInventario());
-                    break;
-                case 6:
-                    DispositivoElectronico masCaro = buscarDispositivoMasCaro();
-                    if (masCaro != null) {
-                        System.out.println("El dispositivo más caro es: " + masCaro.toString());
-                    } else {
-                        System.out.println("El inventario está vacío.");
-                    }
-                    break;
+                    break;              
                 default:
                     System.out.println("Ingrese una opción correcta");
                     break;
