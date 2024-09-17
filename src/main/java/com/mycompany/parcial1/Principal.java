@@ -118,25 +118,25 @@ public class Principal {
     }
 
     public static void venderDispositivo(int index, int cantidad) {
-        if (index < 0 || index >= inventario.size()) {
+        if (index < 0 || index >= productos.size()) {
             System.out.println("Índice inválido");
             return;
         }
 
-        DispositivoElectronico dispositivo = inventario.get(index);
+        Producto dispositivo = productos.get(index);
 
         // Verifica si el dispositivo tiene suficiente stock
-        if (cantidad > dispositivo.getStock()) {
+        if (cantidad > dispositivo.getCantidad()) {
             System.out.println("No hay suficiente stock para completar la venta.");
             return;
         }
 
         // Reduce la cantidad de stock
-        dispositivo.setStock(dispositivo.getStock() - cantidad);
+        dispositivo.setCantidad(dispositivo.getCantidad()- cantidad);
 
         // Opcional: Si el stock llega a 0, puedes eliminar el dispositivo del inventario
-        if (dispositivo.getStock() == 0) {
-            inventario.remove(index);
+        if (dispositivo.getCantidad()== 0) {
+            productos.remove(index);
             System.out.println("El dispositivo " + dispositivo.getNombre() + " ha sido vendido y removido del inventario.");
         } else {
             System.out.println("Se han vendido " + cantidad + " unidades del dispositivo " + dispositivo.getNombre() + ".");
@@ -144,37 +144,22 @@ public class Principal {
     }
 
     public static void mostrarInventario() {
-        if (inventario.isEmpty()) {
+        if (productos.isEmpty()) {
             System.out.println("El inventario está vacío.");
         } else {
-            System.out.println("Inventario de dispositivos:");
-            for (int i = 0; i < inventario.size(); i++) {
-                DispositivoElectronico dispositivo = inventario.get(i);
-                System.out.println((i + 1) + ". " + dispositivo.toString());
+            System.out.println("Inventario de productos:");
+            for (int i = 0; i < productos.size(); i++) {
+                Producto producto = productos.get(i);
+                System.out.println((i + 1) + ". " + producto.toString());
             }
         }
     }
 
-    
 
-    public static DispositivoElectronico buscarDispositivoMasCaro() {
-        if (inventario.isEmpty()) {
-            return null;
-        }
-
-        DispositivoElectronico dispositivoMasCaro = inventario.get(0);
-        for (DispositivoElectronico dispositivo : inventario) {
-            if (dispositivo.getPrecio() > dispositivoMasCaro.getPrecio()) {
-                dispositivoMasCaro = dispositivo;
-            }
-        }
-
-        return dispositivoMasCaro;
-    }
 
     public static double calcularValorTotalInventario() {
         double suma = 0;
-        for (DispositivoElectronico dispositivo : inventario) {
+        for (Producto dispositivo : productos) {
             suma += dispositivo.getPrecio();
         }
         return suma;
